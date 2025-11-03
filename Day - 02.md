@@ -81,64 +81,7 @@ $~~~~~~~~ \boxed{V_{DSAT} = \kappa(V_{GT}) ~ V_{GT}} ~~~~ , where ~ V_{GT} = (V_
 
 <img width="3839" height="1917" alt="Screenshot 2025-10-18 122239" src="https://github.com/user-attachments/assets/e24fa5a6-160f-42bc-80d5-b443257df11c" />
 
-## LAB - 02  Velocity Saturation - ID vs VDS
-<details> <summary> SPICE File: nmos_chara_W1.8u_L1.2u.spice </summary>
-
-```
-*** Netlist Description ***
-M1 vdd n1 0 0 nmos W=1.8u L=1.2u
-R1 in n1 55
-Vdd vdd 0 2.5
-Vin in 0 2.5
-
-*** .include model ***
-.lib "tsmc_025um_model.mod" cmos_models
-
-*** Simulation Commands ***
-.op
-.dc Vdd 0 2.5 0.1 Vin 0 2.5 0.5
-
-.control
-run
-display
-setplot dc1
-plot -vdd#branch
-.endc
-
-.end
-```
-</details>
-
-<details> <summary> SPICE File: nmos_chara_W0.375u_L0.25u.spice </summary>
-
-```
-*** Netlist Description ***
-M1 vdd n1 0 0 nmos W=0.375u L=0.25u
-R1 in n1 55
-Vdd vdd 0 2.5
-Vin in 0 2.5
-
-*** .include model ***
-.lib "tsmc_025um_model.mod" cmos_models
-
-*** Simulation Commands ***
-.op
-.dc Vdd 0 2.5 0.1 Vin 0 2.5 0.5
-
-.control
-run
-display
-setplot dc1
-plot -vdd#branch
-.endc
-
-.end
-```
-</details>
-
-
-
-## LAB - 2.1 Velocity Saturation - sky130 (W=0.39u, L=0.15u)
+## LAB - 2.1 Velocity Saturation - sky130 (W=0.39um, L=0.15um)
 <details> <summary> SPICE File: day2_nfet_idvgs_L015_W039.spice </summary>
 
 ```
@@ -168,7 +111,7 @@ setplot dc1
 ```
 </details>
 
-
+![WhatsApp Image 2025-11-03 at 11 45 51 AM (1)](https://github.com/user-attachments/assets/361e63ad-5179-4d74-9aca-b60de212173a)
 
 ## 3 CMOS Voltage Transfer Characteristics (VTC)
 
