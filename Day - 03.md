@@ -34,6 +34,8 @@ meas dc Vm find V(out) when V(out)=V(in)
 ```
 </details>
 
+![WhatsApp Image 2025-11-03 at 11 45 32 AM](https://github.com/user-attachments/assets/07528a72-835a-4fd6-ab1f-b26580b41df2)
+
 ## LAB - 3.2 CMOS Inverter Transition time - sky130 (Wp/Wn = 0.84u/0.36u, L=0.15u)
 <details> <summary> SPICE File: day3_inv_tran_Wp084_Wn036.spice </summary>
 
@@ -73,6 +75,8 @@ meas tran t_pHL TRIG v(in) VAL=tp_thr RISE=2 TARG v(out) VAL=tp_thr FALL=2
 .end
 ```
 </details>
+
+![WhatsApp Image 2025-11-03 at 11 45 38 AM](https://github.com/user-attachments/assets/37a906fc-6f55-416e-9e2d-3a6dd6c5bc89)
 
 ## 1.1 SPICE deck creation for CMOS inverter
 VTC - SPICE simulations
