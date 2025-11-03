@@ -199,6 +199,46 @@ _Hence the name Linear Region_
 
   - Output Resistance, $r_o = \dfrac{1}{\lambda I_D}$
 
+## LAB - 01 : ID vs VDS for different VGS (W=5um, L=2um)
+<details> <summary> SPICE File: day1_nfet_idvds_L2_W5.spice </summary>
+
+```
+*** Model Description ***
+.param temp=27
+
+*** Including sky130 library files ***
+.lib "sky130_fd_pr/models/sky130.lib.spice" tt
+
+*** Netlist Description ***
+XM1 vdd n1 0 0 sky130_fd_pr__nfet_01v8 w=5 l=2
+R1 n1 in 55
+Vdd vdd 0 1.8
+Vin in 0 1.8
+
+*** Simulation Commands ***
+.op
+.dc Vdd 0 1.8 0.1 Vin 0 1.8 0.2
+
+.control
+run
+display
+setplot dc1
+.endc
+
+.end
+```
+</details>
+
+```
+git clone https://github.com/kunalg123/sky130CircuitDesignWorkshop.git
+cd sky130CircuitDesignWorkshop/design
+sudo apt install ngspice
+ngspice day1_nfet_idvds_L2_W5.spice
+```
+
+
+
+
 
 
 
