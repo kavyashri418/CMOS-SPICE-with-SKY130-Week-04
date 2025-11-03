@@ -42,3 +42,44 @@ Vm = 1.4V
 
 <img width="2085" height="713" alt="Screenshot 2025-10-18 184842" src="https://github.com/user-attachments/assets/070e847d-ac73-444d-9ff7-b4a75a257382" />
 
+## LAB - 04  Noise Margin - sky130 Inverter (Wp/Lp=1u/0.15u, Wn/Ln=0.36u/0.15u)
+<details> <summary> SPICE File: day4_inv_noisemargin_wp1_wn036.spice </summary>
+
+```
+*** Model Description ***
+.param temp=27
+
+*** Including sky130 library files ***
+.lib "sky130_fd_pr/models/sky130.lib.spice" tt
+
+*** Netlist Description ***
+XM1 out in vdd vdd sky130_fd_pr__pfet_01v8 w=1 l=0.15
+XM2 out in 0 0 sky130_fd_pr__nfet_01v8 w=0.36 l=0.15
+Cload out 0 50fF
+Vdd vdd 0 1.8V
+Vin in 0 1.8V
+
+*** Simulation Commands ***
+.op
+.dc Vin 0 1.8 0.01
+
+.control
+run
+setplot dc1
+display
+let dVout = deriv(V(out))
+meas dc vil find V(in) when dVout=-1 cross=1
+meas dc vih find V(in) when dVout=-1 cross=2
+meas dc voh find V(out) when dVout=-1 cross=1
+meas dc vol find V(out) when dVout=-1 cross=2
+
+let NML = vil - vol
+let NMH = voh - vih
+print NML
+print NMH
+.endc
+
+.end
+```
+</details>
+
