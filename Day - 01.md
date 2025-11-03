@@ -235,6 +235,7 @@ cd sky130CircuitDesignWorkshop/design
 sudo apt install ngspice
 ngspice day1_nfet_idvds_L2_W5.spice
 ```
+![WhatsApp Image 2025-11-03 at 11 45 51 AM](https://github.com/user-attachments/assets/90775c0d-ae6e-4a64-b7b5-1d2e5148c54f)
 
 
 
