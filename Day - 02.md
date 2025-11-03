@@ -82,6 +82,39 @@ $~~~~~~~~ \boxed{V_{DSAT} = \kappa(V_{GT}) ~ V_{GT}} ~~~~ , where ~ V_{GT} = (V_
 <img width="3839" height="1917" alt="Screenshot 2025-10-18 122239" src="https://github.com/user-attachments/assets/e24fa5a6-160f-42bc-80d5-b443257df11c" />
 
 ## LAB - 2.1 Velocity Saturation - sky130 (W=0.39um, L=0.15um)
+<details> <summary> SPICE File: day2_nfet_idvds_L015_W039.spice </summary>
+
+```
+*** Model Description ***
+.param temp=27
+
+*** Including sky130 library files ***
+.lib "sky130_fd_pr/models/sky130.lib.spice" tt
+
+*** Netlist Description ***
+
+XM1 Vdd n1 0 0 sky130_fd_pr__nfet_01v8 w=0.39 l=0.15
+R1 n1 in 55
+Vdd vdd 0 1.8V
+Vin in 0 1.8V
+
+*** Simulation commands ***
+.op
+.dc Vdd 0 1.8 0.1 Vin 0 1.8 0.2
+
+.control
+run
+display
+setplot dc1
+.endc
+
+.end
+```
+</details>
+
+![WhatsApp Image 2025-11-03 at 11 46 15 AM](https://github.com/user-attachments/assets/0884cb2c-cba3-4b48-a9d8-af429d467e38)
+
+## LAB - 2.2 Velocity Saturation ID$ vs. VGS - sky130 NMOS (5u/2u vs. 0.39u/0.15u)
 <details> <summary> SPICE File: day2_nfet_idvgs_L015_W039.spice </summary>
 
 ```
@@ -111,7 +144,7 @@ setplot dc1
 ```
 </details>
 
-![WhatsApp Image 2025-11-03 at 11 45 51 AM (1)](https://github.com/user-attachments/assets/361e63ad-5179-4d74-9aca-b60de212173a)
+![WhatsApp Image 2025-11-03 at 11 46 16 AM](https://github.com/user-attachments/assets/7dd70e87-8b83-44fa-b63a-cbd18d02f613)
 
 ## 3 CMOS Voltage Transfer Characteristics (VTC)
 
