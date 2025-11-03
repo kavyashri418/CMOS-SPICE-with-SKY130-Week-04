@@ -40,6 +40,8 @@ plot deriv(dc1.V(out)) deriv(dc2.V(out)) deriv(dc3.V(out)) deriv(dc4.V(out)) der
 ```
 </details>
 
+<img width="1219" height="706" alt="Screenshot 2025-11-03 101848" src="https://github.com/user-attachments/assets/c3b3c4cc-dc32-4338-af59-5080477df6a0" />
+
 We can see from the simulations that:
 - The CMOS Inverter continues to work well at even 0.8V (below half the original supply voltage of 1.8V) close to the transistor threshold voltages!
 - Since the transistor ratio, $r$ is fixed, the switching threshold, $V_M$ is approximately proportional to the $V_{DD}$.
@@ -75,8 +77,6 @@ Disadvantages of using 0.5V supply
 
 <img width="2845" height="1081" alt="Screenshot 2025-10-18 195559" src="https://github.com/user-attachments/assets/00dc446e-3fa7-4088-b7f6-2209d01f703e" />
 <img width="928" height="527" alt="CircuitDesignWorkshop_D5_CMOS_Inverter_Robustness_DeviceVariations_4" src="https://github.com/user-attachments/assets/96d8380f-b59b-4b9d-bb90-8042d05643ae" />
-
-LAB Device Variation - sky130 Inverter - ((Wp:7u --> 0.42u, Wn:0.36u --> 7u, L=0.15u)
 
 In this exercise, we try to capture the CMOS Inverter's robustness in the case of a ridiculously extreme case of device width variation.
 
